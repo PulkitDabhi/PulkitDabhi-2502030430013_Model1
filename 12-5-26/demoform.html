@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="regis.css">
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            /* background-color: #f2f2f2; */
+            background-image: url('download.jpg');
+            background-size: cover;
+            background-repeat : no-repeat;
+            background-position: center;
+        }
+
+        .container{
+            width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            /* background-color: white; */
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        textarea,
+        select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        fieldset{
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover{
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Registration Form</h2>
+
+        <form>
+
+            <label for="name" style="color: blue; font-size: 18px; font-weight: bold;">
+            Name :
+            </label>
+
+            <input type="text" id="name" style="width: 200px; padding: 5px; border: 2px solid gray; border-radius: 5px;">
+
+            <br><br>
+            <label for="email">Email :</label>
+            <input type="email" id="email">
+            <br><br>
+
+            <label for="password">Password :</label>
+            <input type="password" id="password">
+            <br><br>
+
+            <label for="phone">Contact :</label>
+            <input type="tel" id="phone">
+            <br><br>
+
+            <label for="address">Address :</label>
+            <textarea rows="3" id="address"></textarea>
+            <br><br>
+
+            <label for="state">State :</label>
+            <select id="state">
+                <option>Gujarat</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Goa</option>
+            </select>
+
+            <br><br>
+
+            <p><b>Select Gender:</b></p>
+
+            <input type="radio" id="male" name="gender">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender">
+            <label for="other">Other</label>
+
+            <br><br>
+
+            <fieldset>
+                <legend>Choose your Hobbies:</legend>
+
+                <input type="checkbox" id="coding">
+                <label for="coding">Coding</label><br>
+
+                <input type="checkbox" id="gaming">
+                <label for="gaming">Gaming</label><br>
+
+                <input type="checkbox" id="reading">
+                <label for="reading">Reading</label><br>
+
+                <input type="checkbox" id="travel">
+                <label for="travel">Travel</label>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+            <!-- <iframe src="https://www.youtube.com/" frameborder="1"></iframe> -->
+
+        </form>
+
+    </div>
+
+</body>
+</html>

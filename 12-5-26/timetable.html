@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Timetable</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {  
+        padding: 20px;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        min-width: 1200px;
+      }
+
+      th,
+      td {
+        border: 2px solid #444;
+        padding: 12px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 14px;
+      }
+
+      th {
+        background: #e6e6e6;
+        font-weight: bold;
+      }
+
+      .header {
+        background: #d9d9d9;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .time {
+        width: 150px;
+        font-weight: bold;
+        background: #f0f0f0;
+      }
+
+      .recess {
+        background: #efefef;
+        font-weight: bold;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th class="time">Time/Day</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+        </tr>
+
+        <tr>
+          <td class="time">10:10 TO 11:00</td>
+
+          <td class="subject">LIBRARY</td>
+
+          <td class="subject" rowspan="2">
+            B1:WT-UI/UX(KGS) (EA-811)<br />
+            B2:OOPU(BVB) (EB-825)<br />
+            B3:PP(GDT) (EA-809)
+          </td>
+
+          <td class="subject" rowspan="2">
+            B1-OS-HVM (EA-808)<br />
+            B2-PP-MMC (EA-809)<br />
+            B3-CGAVM-RRP (EA-811)
+          </td>
+
+          <td class="subject">OS(HVM) (EA-605)</td>
+
+          <td class="subject" rowspan="2">
+            B1:CGAVM(SS) (EB-825)<br />
+            B2:OOPU(MVR) (EA-809)<br />
+            B3:OS(HVM) (EA-808)
+          </td>
+
+          <td class="subject">ABPSC(BP) (10:00 AM TO 11:00 AM) (ONLINE)</td>
+        </tr>
+
+        <tr>
+          <td class="time">11:00 TO 11:50</td>
+
+          <td class="subject">PP(MMC) (EA-705)</td>
+
+          <td class="subject">WT-UI/UX(KGS) (EA-509)</td>
+
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td class="time">11:50 TO 12:20</td>
+          <td colspan="6" class="recess">RECESS</td>
+        </tr>
+
+        <tr>
+          <td class="time">12:20 TO 01:10</td>
+
+          <td class="subject">OS(HVM) (EA-514)</td>
+
+          <td class="subject" rowspan="2">
+            B1:PP(SKP) (EB-826)<br />
+            B2:CGAVM(RRP) (EA-817)<br />
+            B3:OOPU(MVR) (EB-825)
+          </td>
+
+          <td class="subject">CGAVM(RRK) (EA-512)</td>
+
+          <td class="subject">CGAVM(RRP) (EA-512)</td>
+
+          <td class="subject">WT-UI/UX(MVR) (EA-512)</td>
+
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td class="time">01:10 TO 02:00</td>
+
+          <td class="subject">OOPU(JKG) (EA-514)</td>
+
+          <td class="subject">PP(SAP) (EA-512)</td>
+
+          <td class="subject">LIBRARY</td>
+
+          <td class="subject">OOPU(SMD) (EA-512)</td>
+
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td class="time">02:00 TO 2:10</td>
+          <td colspan="6" class="recess">RECESS</td>
+        </tr>
+
+        <tr>
+          <td class="time">2:10 TO 3:00</td>
+
+          <td class="subject" rowspan="2">
+            B1:OOPU(JKG) (EA-810)<br />
+            B2:WT-UI/UX(KGS) (EA-811)<br />
+            B3:OOPU(MVR) (EB-825)
+          </td>
+
+          <td class="subject">CGAVM(RRP) (EA-512)</td>
+
+          <td class="subject">WT-UI/UX(KGS) (EA-512)</td>
+
+          <td class="subject">OOPU(JKG) (EA-512)</td>
+
+          <td class="subject" rowspan="2">
+            B1:OOPU(JKG) (EA-810)<br />
+            B2:OS(HVM) (EB-826)<br />
+            B3:WT-UI/UX(KGS) (EA-811)
+          </td>
+
+          <td>-</td>
+        </tr>
+
+        <tr>
+          <td class="time">3:00 TO 3:50</td>
+
+          <td class="subject">PP(MMC) (EA-512)</td>
+
+          <td class="subject">OS(JAB) (EA-512)</td>
+
+          <td class="subject">IDT-II(JAB) (EA-512)</td>
+
+          <td>-</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>**
