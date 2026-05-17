@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snackify</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <div data-include="header.html"></div>
+
+    <main class="page-content">
+
+        <h2 id="welcome">Welcome to Snackify</h2>
+
+        <section class="products-grid">
+            <article class="product-card">
+                <img src="images/khakhra.jpg" alt="Khakhra snack">
+                <h3>Khakhra</h3>
+                <p>Crunchy baked khakhra made from traditional spices.</p>
+                <div class="product-price">₹130 / 500g</div>
+                <button onclick="addCart('Khakhra')">Add to Cart</button>
+            </article>
+
+            <article class="product-card">
+                <img src="images/bananachips.webp" alt="Chips snack">
+                <h3>Chips</h3>
+                <p>Light and crispy potato chips with a zesty flavour.</p>
+                <div class="product-price">₹ 150 / 500g</div>
+                <button onclick="addCart('Chips')">Add to Cart</button>
+            </article>
+
+            <article class="product-card">
+                <img src="images/samosa.jpg" alt="Samosa snack">
+                <h3>Samosa</h3>
+                <p>Golden fried samosas filled with spiced potato and peas.</p>
+                <div class="product-price">₹100 / Dozen</div>
+                <button onclick="addCart('Samosa')">Add to Cart</button>
+            </article>
+
+            <article class="product-card">
+                <img src="images/biscuits.jpg" alt="Biscuits snack">
+                <h3>Biscuits</h3>
+                <p>Sweet and buttery biscuits perfect with tea.</p>
+                <div class="product-price">₹200 / 500g</div>
+                <button onclick="addCart('Biscuits')">Add to Cart</button>
+            </article>
+        </section>
+
+    </main>
+
+    <div data-include="footer.html"></div>
+
+    <script src="includes.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

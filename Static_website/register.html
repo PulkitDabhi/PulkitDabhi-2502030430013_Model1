@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div data-include="header.html"></div>
+
+    <main class="page-content simple-page">
+        <section class="form-panel">
+            <h1>Create your Snackify account</h1>
+            <p>Sign up to save favorite snacks and checkout faster on every order.</p>
+            <form>
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Enter your name"  required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Create a password" required>
+
+                <label for="dob">Date of Birth</label>
+                <input id="dob" name="dob" type="date" required>
+
+                <label for="contact">Phone</label>
+                <input id="contact" name="contact" type="tel" placeholder="Enter your phone number" required>
+
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+                <button type="submit">Register</button>
+            </form>
+            <p class="form-footer">Already registered? <a href="signin.html">Sign in</a></p>
+        </section>
+    </main>
+
+    <div data-include="footer.html"></div>
+    <script src="includes.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Validate that all fields are filled
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
+                const dob = document.getElementById('dob').value.trim();
+                const contact = document.getElementById('contact').value.trim();
+                const address = document.getElementById('address').value.trim();
+                
+                if (name && email && password && dob && contact && address) {
+                    alert('User is registered');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Please fill in all fields');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
