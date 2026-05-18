@@ -77,6 +77,52 @@ function completeOrder() {
     renderCart();
 }
 
+/* Quiz & discount logic */
+function submitQuiz() {
+    const answers = {
+        q1: 'Gujarat',
+        q2: 'Coconut Oil',
+        q3: 'Samosa Pav',
+        q4: 'Samosa Chaat'
+    };
+    const form = document.getElementById('quizForm');
+    if (!form) return;
+    const user = {
+        q1: form.q1.value || '',
+        q2: form.q2.value || '',
+        q3: form.q3.value || '',
+        q4: form.q4.value || ''
+    };
+
+    const allAnswered = Object.values(user).every(v => v.trim() !== '');
+    const resEl = document.getElementById('quizResult');
+    if (!allAnswered) {
+        if (resEl) resEl.textContent = 'Please answer all questions.';
+        return;
+    }
+
+    const correct = Object.keys(answers).every(k => answers[k] === user[k]);
+    if (correct) {
+        localStorage.setItem('quizDiscount', '0.30');
+        localStorage.setItem('quizCoupon', 'QUIZ30');
+        if (resEl) resEl.innerHTML = '<strong>Correct! You earned a 30% discount.</strong> Coupon code: <strong>QUIZ30</strong>';
+    } else {
+        localStorage.removeItem('quizDiscount');
+        localStorage.removeItem('quizCoupon');
+        if (resEl) resEl.textContent = 'Some answers are incorrect. Try again!';
+    }
+}
+
+function resetQuiz() {
+    const form = document.getElementById('quizForm');
+    if (!form) return;
+    form.reset();
+    localStorage.removeItem('quizDiscount');
+    localStorage.removeItem('quizCoupon');
+    const resEl = document.getElementById('quizResult');
+    if (resEl) resEl.textContent = '';
+}
+
 function renderCart() {
     const cartContainer = document.getElementById('cartContainer');
     if (!cartContainer) return;
@@ -116,12 +162,25 @@ function renderCart() {
     }).join('');
     const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
+
+    const discount = parseFloat(localStorage.getItem('quizDiscount') || '0');
+    const coupon = localStorage.getItem('quizCoupon') || '';
+    let discountLine = '';
+    let totalLine = '<p class="cart-total-price">Total: ' + formatCurrency(total) + '</p>';
+    if (discount > 0) {
+        const discountAmount = total * discount;
+        const discountedTotal = total - discountAmount;
+        discountLine = '<p class="cart-discount">Discount (' + (discount * 100) + '%): -' + formatCurrency(discountAmount) + (coupon ? ' <span class="coupon">(' + coupon + ')</span>' : '') + '</p>';
+        totalLine = '<p class="cart-total-price">Total after discount: ' + formatCurrency(discountedTotal) + '</p>';
+    }
+
     cartContainer.innerHTML =
         '<div class="cart-items">' + rows + '</div>' +
         '<div class="cart-summary-card">' +
         '<h2>Order Summary</h2>' +
         '<p>Total items: ' + itemCount + '</p>' +
-        '<p class="cart-total-price">Total: ' + formatCurrency(total) + '</p>' +
+        discountLine +
+        totalLine +
         '<button type="button" onclick="completeOrder()" class="button button-primary">Order Complete</button>' +
         '</div>';
 }

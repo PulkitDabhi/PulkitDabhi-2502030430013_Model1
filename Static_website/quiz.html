@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snackify - Quiz & Offer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div data-include="header.html"></div>
+
+    <main class="page-content quiz-page">
+        <h2>Play Quiz — Avail 30% Offer</h2>
+
+        <form id="quizForm" class="quiz-form" onsubmit="event.preventDefault(); submitQuiz();">
+            <div class="quiz-question">
+                <p>1. Which Indian state is world-famous for inventing and perfecting the crispy, round, flatbread snack known as Khakhra?</p>
+                <label><input type="radio" name="q1" value="Gujarat"> A. Gujarat</label>
+                <label><input type="radio" name="q1" value="Maharashtra"> B. Maharashtra</label>
+                <label><input type="radio" name="q1" value="Rajasthan"> C. Rajasthan</label>
+                <label><input type="radio" name="q1" value="Punjab"> D. Punjab</label>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. Authentic, bright yellow Kerala banana chips are traditionally fried in which specific oil to give them their distinct flavor?</p>
+                <label><input type="radio" name="q2" value="Mustard Oil"> A. Mustard Oil</label>
+                <label><input type="radio" name="q2" value="Peanut Oil"> B. Peanut Oil</label>
+                <label><input type="radio" name="q2" value="Sunflower Oil"> C. Sunflower Oil</label>
+                <label><input type="radio" name="q2" value="Coconut Oil"> D. Coconut Oil</label>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. In Mumbai street food culture, what unique fusion snack is created by stuffing a hot samosa inside a sliced bread bun along with spicy chutneys?</p>
+                <label><input type="radio" name="q3" value="Bun Maska"> A. Bun Maska</label>
+                <label><input type="radio" name="q3" value="Samosa Pav"> B. Samosa Pav</label>
+                <label><input type="radio" name="q3" value="Samosa Chaat"> C. Samosa Chaat</label>
+                <label><input type="radio" name="q3" value="Misal Pav"> D. Misal Pav</label>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. What is the name of the popular North Indian street food where a samosa is crushed, then topped with chickpea curry (chole), yogurt, and sweet-tangy chutneys?</p>
+                <label><input type="radio" name="q4" value="Pakora Platter"> A. Pakora Platter</label>
+                <label><input type="radio" name="q4" value="Samosa Chaat"> B. Samosa Chaat</label>
+                <label><input type="radio" name="q4" value="Samosa Korma"> C. Samosa Korma</label>
+                <label><input type="radio" name="q4" value="Kachori Sabzi"> D. Kachori Sabzi</label>
+            </div>
+
+            <div class="quiz-actions">
+                <button type="submit" class="button button-primary">Submit Quiz</button>
+                <button type="button" class="button" onclick="resetQuiz()">Reset</button>
+            </div>
+
+            <div id="quizResult" class="quiz-result" aria-live="polite"></div>
+        </form>
+
+        <p class="note">If all answers are correct you will receive a 30% discount on your next order.</p>
+    </main>
+
+    <div data-include="footer.html"></div>
+
+    <script src="includes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
