@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Task 1 — Create Basic HTML Structure -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Comfort Bowl</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Task 3 — Create Responsive Navbar -->
+    <nav class="sticky top-0   z-50 bg-zinc-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <a href="#" class="text-2xl md:text-3xl font-bold text-amber-400">
+                    The Comfort Bowl
+                </a>
+
+                <button id="menuBtn" class="md:hidden text-white text-3xl" aria-label="Open menu">☰</but>
+
+                <div id="menuLinks" class="hidden md:flex items-center gap-8 font-medium">
+                    <a href="#home" class="hover:text-amber-400">Home</a>
+                    <a href="#about" class="hover:text-amber-400">About</a>
+                    <a href="#menu" class="hover:text-amber-400">Menu</a>
+                    <a href="#gallery" class="hover:text-amber-400">Gallery</a>
+                    <a href="#contact" class="hover:text-amber-400">Contact</a>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 hover:text-amber-400">Home</a>
+                <a href="#about" class="block py-2 hover:text-amber-400">About</a>
+                <a href="#menu" class="block py-2 hover:text-amber-400">Menu</a>
+                <a href="#gallery" class="block py-2 hover:text-amber-400">Gallery</a>
+                <a href="#contact" class="block py-2 hover:text-amber-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Task 4 — Create Hero Section -->
+    <section id="home" class="relative h-[85vh] bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl">
+            <p class="text-amber-400 text-lg md:text-xl mb-3">Comfort food, elevated</p>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">Bowl Meals Crafted For Every Mood</h1>
+            <p class="mt-4 text-base md:text-xl text-stone-200">
+                Discover bold flavors, fresh ingredients, and satisfying bowls made with care.
+            </p>
+            <div class="mt-8">
+                <button id="openModalBtn"
+                    class="bg-amber-400 hover:bg-amber-500 text-black font-semibold px-8 py-3 rounded-lg text-lg">
+                    Order Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 14 — Add Carousel Slider -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">Featured Bowls</h2>
+                <p class="text-stone-600 mt-2">A taste of our signature menu</p>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl shadow-xl">
+                <div id="carousel" class="relative">
+                    <div class="carousel-slide block">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80"
+                            class="w-full h-[420px] object-cover" alt="Tokyo Teriyaki Bowl">
+                    </div>
+                    <div class="carousel-slide hidden">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80"
+                            class="w-full h-[420px] object-cover" alt="Tuscan Italian Bowl">
+                    </div>
+                    <div class="carousel-slide hidden">
+                        <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=80"
+                            class="w-full h-[420px] object-cover" alt="Fiesta Mexican Bowl">
+                    </div>
+
+                    <button id="prevSlide"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-11 h-11 rounded-full">‹</button>
+                    <button id="nextSlide"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-11 h-11 rounded-full">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 7 — Add Restaurant Services Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-500">Why Choose Us</h2>
+                <p class="text-stone-600 mt-3">Comfort, speed, and quality in every bowl.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-stone-50 p-6 rounded-2xl shadow text-center">
+                    <div class="text-5xl text-amber-500">🚚</div>
+                    <h3 class="mt-4 font-bold text-xl">Delivery</h3>
+                    <p class="text-stone-600 mt-2">Fresh bowls delivered fast.</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl shadow text-center">
+                    <div class="text-5xl text-amber-500">📅</div>
+                    <h3 class="mt-4 font-bold text-xl">Online Booking</h3>
+                    <p class="text-stone-600 mt-2">Reserve your table easily.</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl shadow text-center">
+                    <div class="text-5xl text-amber-500">🍲</div>
+                    <h3 class="mt-4 font-bold text-xl">Catering</h3>
+                    <p class="text-stone-600 mt-2">Perfect for office lunches and events.</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl shadow text-center">
+                    <div class="text-5xl text-amber-500">⚡</div>
+                    <h3 class="mt-4 font-bold text-xl">Fast Service</h3>
+                    <p class="text-stone-600 mt-2">Quick service without compromise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 5 — Create Food Menu Using Cards -->
+    <!-- Task 6 — Create Responsive Grid Layout -->
+    <section id="menu" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Our Signature Bowls</h2>
+                <p class="text-stone-600 mt-3">Three comfort bowls made to satisfy every craving.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl shadow overflow-hidden h-full">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+                        class="w-full h-56 object-cover" alt="The Tokyo Teriyaki Bowl">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold">The Tokyo Teriyaki Bowl</h3>
+                        <p class="text-stone-500 mt-1">Teriyaki chicken, rice, pickled veggies, sesame glaze</p>
+                        <p class="text-red-500 font-semibold mt-2">$13.99</p>
+                        <button
+                            class="mt-4 bg-amber-400 hover:bg-amber-500 px-5 py-2 rounded-lg font-semibold">Order</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow overflow-hidden h-full">
+                    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80"
+                        class="w-full h-56 object-cover" alt="The Tuscan Italian Bowl">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold">The Tuscan Italian Bowl</h3>
+                        <p class="text-stone-500 mt-1">Creamy pasta, basil, roasted vegetables, parmesan</p>
+                        <p class="text-red-500 font-semibold mt-2">$14.99</p>
+                        <button
+                            class="mt-4 bg-amber-400 hover:bg-amber-500 px-5 py-2 rounded-lg font-semibold">Order</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow overflow-hidden h-full">
+                    <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80"
+                        class="w-full h-56 object-cover" alt="The Fiesta Mexican Bowl">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold">The Fiesta Mexican Bowl</h3>
+                        <p class="text-stone-500 mt-1">Rice, black beans, salsa, avocado, grilled chicken</p>
+                        <p class="text-red-500 font-semibold mt-2">$12.99</p>
+                        <button
+                            class="mt-4 bg-amber-400 hover:bg-amber-500 px-5 py-2 rounded-lg font-semibold">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 8 — Create Image Gallery -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Gallery</h2>
+                <p class="text-stone-600 mt-3">A closer look at our bowls and dining experience</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-72 object-cover rounded-2xl shadow hover:scale-105 transition" alt="Gallery 1">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-72 object-cover rounded-2xl shadow hover:scale-105 transition" alt="Gallery 2">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-72 object-cover rounded-2xl shadow hover:scale-105 transition" alt="Gallery 3">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-72 object-cover rounded-2xl shadow hover:scale-105 transition" alt="Gallery 4">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-72 object-cover rounded-2xl shadow hover:scale-105 transition" alt="Gallery 5">
+                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-72 object-cover rounded-2xl shadow hover:scale-105 transition" alt="Gallery 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 9 — Create Customer Review Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-500">Customer Reviews</h2>
+                <p class="text-stone-600 mt-3">What our guests say about The Comfort Bowl</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white shadow rounded-2xl p-6 text-center h-full">
+                    <img src="https://i.pravatar.cc/120?img=12" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
+                        alt="Customer 1">
+                    <div class="text-amber-400 text-xl mb-2">★★★★★</div>
+                    <p class="text-stone-600">The Tokyo Teriyaki Bowl was packed with flavor and felt really fresh.</p>
+                    <h4 class="mt-4 font-bold">Riya Sharma</h4>
+                </div>
+
+                <div class="bg-white shadow rounded-2xl p-6 text-center h-full">
+                    <img src="https://i.pravatar.cc/120?img=32" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
+                        alt="Customer 2">
+                    <div class="text-amber-400 text-xl mb-2">★★★★☆</div>
+                    <p class="text-stone-600">Loved the Tuscan bowl. Cozy place, quick service, and great presentation.
+                    </p>
+                    <h4 class="mt-4 font-bold">Aman Patel</h4>
+                </div>
+
+                <div class="bg-white shadow rounded-2xl p-6 text-center h-full">
+                    <img src="https://i.pravatar.cc/120?img=45" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
+                        alt="Customer 3">
+                    <div class="text-amber-400 text-xl mb-2">★★★★★</div>
+                    <p class="text-stone-600">The Fiesta Mexican Bowl was amazing. Easily one of my favorite meals.</p>
+                    <h4 class="mt-4 font-bold">Neha Singh</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 10 — Create Contact Form -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold">Contact & Reservation</h2>
+                <p class="text-stone-600 mt-3">Reserve a table or send us a message</p>
+            </div>
+
+            <div class="bg-stone-50 shadow rounded-2xl p-6 md:p-8">
+                <form class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label class="block mb-2 font-medium">Name</label>
+                        <input type="text"
+                            class="w-full border border-stone-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Email</label>
+                        <input type="email"
+                            class="w-full border border-stone-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Phone</label>
+                        <input type="tel"
+                            class="w-full border border-stone-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Message</label>
+                        <textarea rows="5"
+                            class="w-full border border-stone-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
+                    </div>
+                    <button
+                        class="bg-amber-400 hover:bg-amber-500 text-black font-semibold px-6 py-3 rounded-lg w-full">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task 11 — Create Footer -->
+    <footer class="bg-zinc-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl font-bold text-amber-400 mb-4">The Comfort Bowl</h3>
+                    <p class="text-stone-300">Warm bowls, fresh flavors, and a comfortable dining experience.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-amber-400">Contact</h4>
+                    <p>Address: 123 Comfort Lane, Mumbai, India</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Email: hello@thecomfortbowl.com</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-amber-400">Follow Us</h4>
+                    <div class="flex justify-center md:justify-start gap-4 text-2xl">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-amber-400 transition" aria-label="Facebook">
+                            Facebook
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-amber-400 transition" aria-label="Instagram">
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 mt-8 pt-6 text-center text-stone-400">
+            © 2026 The Comfort Bowl. All rights reserved.
+        </div>
+        </div>
+    </footer>
+
+    <!-- Task 13 — Add Bootstrap Modal (Tailwind version) -->
+    <div id="orderModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 px-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
+            <div class="bg-amber-400 px-6 py-4 flex items-center justify-between">
+                <h3 class="text-xl font-bold">Order Now</h3>
+                <button id="closeModalBtn" class="text-2xl font-bold" aria-label="Close modal">×</button>
+            </div>
+            <div class="p-6">
+                <form class="space-y-4">
+                    <input type="text" placeholder="Name" class="w-full border rounded-lg px-4 py-3">
+                    <input type="email" placeholder="Email" class="w-full border rounded-lg px-4 py-3">
+                    <input type="tel" placeholder="Phone" class="w-full border rounded-lg px-4 py-3">
+                    <textarea rows="4" placeholder="Your Order" class="w-full border rounded-lg px-4 py-3"></textarea>
+                    <button class="bg-amber-400 hover:bg-amber-500 w-full py-3 rounded-lg font-semibold">Place
+                        Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        const modal = document.getElementById('orderModal');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        openModalBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+        closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.add('hidden');
+        });
+
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => slide.classList.toggle('hidden', i !== index));
+        }
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 4000);
+    </script>
+</body>
+
+</html>
